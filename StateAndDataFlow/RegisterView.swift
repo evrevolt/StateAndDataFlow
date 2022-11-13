@@ -13,14 +13,20 @@ struct RegisterView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter your name", text: $name)
-                .multilineTextAlignment(.center)
+            HStack {
+                TextField("Enter your name", text: $name)
+                    .multilineTextAlignment(.center)
+                Text("\(name.count)")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(setColor())
+            }
+            .padding()
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("OK")
                 }
-            }
+            }.disabled(disableButton())
         }
     }
     
@@ -29,6 +35,14 @@ struct RegisterView: View {
             user.name = name
             user.isRegister.toggle()
         }
+    }
+    
+    private func setColor() -> Color {
+        name.count <= 3 || name.isEmpty ? Color.red : Color.green
+    }
+    
+    private func disableButton() -> Bool {
+        name.count <= 3 || name.isEmpty ? true : false
     }
 }
 
