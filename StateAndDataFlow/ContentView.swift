@@ -28,9 +28,7 @@ struct ContentView: View {
             
             Button(action: {
                 
-                UserDefaults.standard.set("", forKey: "username")
-                
-                
+                UserDefaults.standard.set(false, forKey: "isRegister")
                 
             }){
                 Text("Log Out")
