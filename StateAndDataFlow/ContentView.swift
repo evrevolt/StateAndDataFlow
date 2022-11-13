@@ -30,6 +30,21 @@ struct ContentView: View {
                 
                 UserDefaults.standard.set(false, forKey: "isRegister")
                 
+                /*
+                 Я понимаю, что сделал много что не так.
+                 Поэтому вот вам котик =)) 
+                 
+                  ..........／＞　 フ.................
+                 　　　　　| 　_　 _|
+                 　 　　　／`ミ _x 彡
+                 　　 　 /　　　 　 |
+                 　　　 /　 ヽ　　 ﾉ
+                 　／￣|　　 |　|　|
+                 　| (￣ヽ＿_ヽ_)_)
+                 　＼二つ
+                 
+                 */
+                
             }){
                 Text("Log Out")
                     .font(.title)
