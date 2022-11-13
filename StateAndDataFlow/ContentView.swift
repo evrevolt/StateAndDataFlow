@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var user: UserManager
     
+    
     var body: some View {
         VStack {
             Text("Hi, \(user.name)")
@@ -24,6 +25,23 @@ struct ContentView: View {
             ButtonView(timer: timer)
             
             Spacer()
+            
+            Button(action: {
+                
+                UserDefaults.standard.set("", forKey: "username")
+                
+                
+                
+            }){
+                Text("Log Out")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+            }
+            .frame(width: 200, height: 60)
+            .background(.blue)
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
         }
     }
 }
